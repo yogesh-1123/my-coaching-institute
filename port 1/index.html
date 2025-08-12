@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BrightMind Maths Coaching</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Quicksand', sans-serif;
-      margin: 0;
-      padding:0;
-      overflow-x: hidden;
-      background-color: #f8faff;
-      color: #222;
-      scroll-behavior: smooth;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrightMind Maths Coaching</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Quicksand", sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #f8faff;
+        color: #222;
+        scroll-behavior: smooth;
+      }
 
-    /* Navigation Bar */
-    nav {
+      /* Navigation Bar */
+      /* nav {
       background: #1e293b;
-/*       padding: 1rem 2rem; */
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 10;
+      overflow: auto;
+      max-width: 100vw;
+      
     }
     nav h2 {
       color: white;
       margin: 0;
+      align-items: left;
+      white-space: nowrap;
     }
     nav ul {
       list-style: none;
-      margin: 0;
+      margin-right:19px;
       padding: 0;
       display: flex;
-      gap: 1rem;
+      gap: 1vw;
     }
     nav ul li a {
       color: white;
@@ -45,348 +54,510 @@
     }
     nav ul li a:hover {
       color: #facc15;
-    }
+    } */
 
-    /* Carousel */
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      max-height: 500px;
-    }
-    .carousel img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      display: block;
-    }
-    .carousel-caption {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      font-size: 1.2rem;
-    }
-    .carousel-fade {
-      animation: fadeEffect 1.5s ease-in-out;
-    }
-    @keyframes fadeEffect {
-      from {opacity: 0.4;}
-      to {opacity: 1;}
-    }
+      nav {
+        background: linear-gradient(90deg, #4a90e2, #0077b6);
+        color: white;
+        padding: 0.7rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
 
-    /* Sections */
-    section {
-      padding: 3rem 1rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    section h2 {
-      text-align: center;
-      color: #2563eb;
-      margin-bottom: 1.5rem;
-    }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
 
-    /* About Us */
-    .about p {
-      text-align: center;
-      font-size: 1.05rem;
-      max-width: 800px;
-      margin: auto;
-      color: #444;
-      line-height: 1.6;
-    }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+      }
 
-    /* Courses */
-    .courses {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-    }
-    .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-      color: #2563eb;
-    }
-    .card p {
-      font-size: 0.95rem;
-      color: #555;
-      min-height: 50px;
-    }
-    .price {
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin: 1rem 0;
-      color: #111;
-    }
-    .buy-btn {
-      padding: 0.6rem 1.2rem;
-      background-color: #3b82f6;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .buy-btn:hover {
-      background-color: #2563eb;
-    }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
 
-    /* Achievements */
-    .achievements {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      text-align: center;
-    }
-    .achievements div {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    .achievements h3 {
-      color: #2563eb;
-      margin-bottom: 0.5rem;
-    }
+      .nav-links a:hover {
+        color: #ffdd57;
+      }
 
-    /* Teachers */
-    .teachers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      text-align: center;
-    }
-    .teachers img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 0.8rem;
-    }
+      /* Hamburger menu */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
 
-    /* Contact */
-    .contact form {
-      display: grid;
-      gap: 1rem;
-      max-width: 600px;
-      margin: auto;
-    }
-    .contact input, .contact textarea {
-      padding: 0.8rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      width: 100%;
-    }
-    .contact button {
-      padding: 0.8rem;
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .contact button:hover {
-      background-color: #1e40af;
-    }
-    .map {
-      margin-top: 2rem;
-      height: 350px;
-    }
+      .bar {
+        height: 3px;
+        width: 25px;
+        background-color: white;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+      }
 
-    /* Floating buttons */
-    .floating-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
-    }
-    .floating-btn a {
-      background: #25d366;
-      color: white;
-      padding: 12px 15px;
-      border-radius: 50%;
-      font-size: 20px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      text-decoration: none;
-    }
-    .floating-btn a.call {
-      background: #0ea5e9;
-    }
-
-    /* Footer */
-    footer {
-      background: #1e293b;
-      color: #ccc;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation -->
-  <nav>
-    <h2>BrightMind Maths</h2>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#courses">Courses</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#teachers">Teachers</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Carousel -->
-  <div class="carousel">
-    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481" alt="Math Class"><div class="carousel-caption">Master Maths with Us</div></div>
-    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" alt="Students"><div class="carousel-caption">Learn from Experts</div></div>
-    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="Teacher"><div class="carousel-caption">Achieve Excellence</div></div>
-  </div>
-
-  <!-- About Us -->
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>At BrightMind Maths Coaching, we believe every student can excel in mathematics. With expert faculty, modern teaching methods, and personalized attention, we help learners build strong problem-solving skills and a love for numbers.</p>
-  </section>
-
-  <!-- Courses -->
-  <section id="courses">
-    <h2>Our Courses</h2>
-    <div class="courses">
-      <div class="card">
-        <h3>Basic Mathematics</h3>
-        <p>Perfect for beginners to build a strong foundation in numbers and formulas.</p>
-        <!-- <div class="price">₹2,500</div> -->
-        <button class="buy-btn">Enroll Now</button>
-      </div>
-      <div class="card">
-        <h3>Advanced Algebra</h3>
-        <p>Dive deep into equations, polynomials, and advanced problem-solving techniques.</p>
-        <!-- <div class="price">₹4,000</div> -->
-        <button class="buy-btn">Enroll Now</button>
-      </div>
-      <div class="card">
-        <h3>Calculus Mastery</h3>
-        <p>Learn limits, derivatives, and integrals to excel in competitive exams.</p>
-        <!-- <div class="price">₹5,500</div> -->
-        <button class="buy-btn">Enroll Now</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Achievements -->
-  <section id="achievements">
-    <h2>Student Achievements</h2>
-    <div class="achievements">
-      <div>
-        <h3>98% Board Results</h3>
-        <p>Our students consistently achieve top scores in board exams.</p>
-      </div>
-      <div>
-        <h3>National Olympiad Winners</h3>
-        <p>Multiple students have bagged gold in National Math Olympiads.</p>
-      </div>
-      <div>
-        <h3>Scholarship Earners</h3>
-        <p>Over 50 students have secured prestigious math scholarships.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Teachers -->
-  <section id="teachers">
-    <h2>Meet Our Teachers</h2>
-    <div class="teachers">
-      <div>
-        <img src="yogi.jpg" alt="Teacher 1">
-        <h3>Rahul Sharma</h3>
-        <p>Expert in Algebra & Trigonometry</p>
-      </div>
-      <div>
-        <img src="yogi.jpg" alt="Teacher 2">
-        <h3>Pranjal Mehta</h3>
-        <p>Specialist in Calculus & Geometry</p>
-      </div>
-      <div>
-        <img src="yogi.jpg" alt="Teacher 3">
-        <h3>Amit Verma</h3>
-        <p>Competitive Exam Math Coach</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <!-- <h2>Contact Us</h2> -->
-   <section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/xpwlkjle" method="POST" class="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="tel" name="mobile" placeholder="Your Mobile Number" pattern="[0-9]{10}" required>
-    <textarea name="message" placeholder="Tell About Yourself" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d10538.536962357985!2d76.56994428953087!3d28.885781593849835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssunaria%20chowk!5e0!3m2!1sen!2sin!4v1754830476518!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>
-
-
-
-  <!-- Floating Buttons -->
-  <div class="floating-btn">
-    <a href="https://wa.me/917082754336" target="_blank" title="Chat on WhatsApp">💬</a>
-    <a href="tel:+917082754336" class="call" title="Call Now">📞</a>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    © 2025 BrightMind Maths Coaching | All Rights Reserved
-  </footer>
-
-  <script>
-    let currentIndex = 0;
-    const items = document.querySelectorAll('.carousel-item');
-    function showCarousel() {
-      items.forEach((item, index) => {
-        item.style.display = index === currentIndex ? 'block' : 'none';
-        if (index === currentIndex) {
-          item.classList.add('carousel-fade');
-        } else {
-          item.classList.remove('carousel-fade');
+      /* Mobile styles */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background-color: #0077b6;
+          flex-direction: column;
+          width: 200px;
+          padding: 1rem;
         }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: flex;
+        }
+      }
+
+      /* Carousel */
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        max-height: 500px;
+      }
+      .carousel img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        display: block;
+      }
+      .carousel-caption {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        font-size: 1.2rem;
+      }
+      .carousel-fade {
+        animation: fadeEffect 1.5s ease-in-out;
+      }
+      @keyframes fadeEffect {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Sections */
+      section {
+        padding: 3rem 1rem;
+        max-width: 1100px;
+        margin: auto;
+      }
+      section h2 {
+        text-align: center;
+        color: #2563eb;
+        margin-bottom: 1.5rem;
+      }
+
+      /* About Us */
+      .about p {
+        text-align: center;
+        font-size: 1.05rem;
+        max-width: 800px;
+        margin: auto;
+        color: #444;
+        line-height: 1.6;
+      }
+
+      /* Courses */
+      .courses {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+      }
+      .card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        color: #2563eb;
+      }
+      .card p {
+        font-size: 0.95rem;
+        color: #555;
+        min-height: 50px;
+      }
+      .price {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin: 1rem 0;
+        color: #111;
+      }
+      .buy-btn {
+        padding: 0.6rem 1.2rem;
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+      .buy-btn:hover {
+        background-color: #2563eb;
+      }
+
+      /* Achievements */
+      .achievements {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        text-align: center;
+      }
+      .achievements div {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+      .achievements h3 {
+        color: #2563eb;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Teachers */
+      .teachers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        text-align: center;
+      }
+      .teachers img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 0.8rem;
+      }
+
+      /* Contact */
+      .contact form {
+        display: grid;
+        gap: 1rem;
+        max-width: 600px;
+        margin: auto;
+      }
+      .contact input,
+      .contact textarea {
+        padding: 0.8rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        width: 100%;
+      }
+      .contact button {
+        padding: 0.8rem;
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .contact button:hover {
+        background-color: #1e40af;
+      }
+      .map {
+        margin-top: 2rem;
+        height: 350px;
+      }
+
+      /* Floating buttons */
+      .floating-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1000;
+      }
+      .floating-btn a {
+        background: #25d366;
+        color: white;
+        padding: 12px 15px;
+        border-radius: 50%;
+        font-size: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+      }
+      .floating-btn a.call {
+        background: #0ea5e9;
+      }
+
+      /* Footer */
+      footer {
+        background: #1e293b;
+        color: #ccc;
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body style="align-items: center; width: 100vw">
+   
+    <nav>
+      <div class="logo">BrightMind</div>
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div class="carousel">
+      <div class="carousel-item">
+        <img
+          src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481"
+          alt="Math Class"
+        />
+        <div class="carousel-caption">Master Maths with Us</div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc"
+          alt="Students"
+        />
+        <div class="carousel-caption">Learn from Experts</div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+          alt="Teacher"
+        />
+        <div class="carousel-caption">Achieve Excellence</div>
+      </div>
+    </div>
+    <!-- About Us -->
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>
+        At BrightMind Maths Coaching, we believe every student can excel in
+        mathematics. With expert faculty, modern teaching methods, and
+        personalized attention, we help learners build strong problem-solving
+        skills and a love for numbers.
+      </p>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses">
+      <h2>Our Courses</h2>
+      <div class="courses">
+        <div class="card">
+          <h3>Basic Mathematics</h3>
+          <p>
+            Perfect for beginners to build a strong foundation in numbers and
+            formulas.
+          </p>
+          <!-- <div class="price">₹2,500</div> -->
+          <a href="#contact">
+            <button class="buy-btn">Enroll Now</button>
+          </a>
+        </div>
+        <div class="card">
+          <h3>Advanced Algebra</h3>
+          <p>
+            Dive deep into equations, polynomials, and advanced problem-solving
+            techniques.
+          </p>
+          <!-- <div class="price">₹4,000</div> -->
+          <a href="#contact">
+            <button class="buy-btn">Enroll Now</button>
+          </a>
+        </div>
+        <div class="card">
+          <h3>Calculus Mastery</h3>
+          <p>
+            Learn limits, derivatives, and integrals to excel in competitive
+            exams.
+          </p>
+          <a href="#contact">
+            <button class="buy-btn">Enroll Now</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements">
+      <h2>Student Achievements</h2>
+      <div class="achievements">
+        <div>
+          <h3>98% Board Results</h3>
+          <p>Our students consistently achieve top scores in board exams.</p>
+        </div>
+        <div>
+          <h3>National Olympiad Winners</h3>
+          <p>Multiple students have bagged gold in National Math Olympiads.</p>
+        </div>
+        <div>
+          <h3>Scholarship Earners</h3>
+          <p>Over 50 students have secured prestigious math scholarships.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teachers -->
+    <section id="teachers">
+      <h2>Meet Our Teachers</h2>
+      <div class="teachers">
+        <div>
+          <img src="yogi.jpg" alt="Teacher 1" />
+          <h3>Rahul Sharma</h3>
+          <p>Expert in Algebra & Trigonometry</p>
+        </div>
+        <div>
+          <img src="yogi.jpg" alt="Teacher 2" />
+          <h3>Pranjal Mehta</h3>
+          <p>Specialist in Calculus & Geometry</p>
+        </div>
+        <div>
+          <img src="yogi.jpg" alt="Teacher 3" />
+          <h3>Amit Verma</h3>
+          <p>Competitive Exam Math Coach</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <!-- <h2>Contact Us</h2> -->
+      <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form
+          action="https://formspree.io/f/xpwlkjle"
+          method="POST"
+          class="contact-form"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input
+            type="tel"
+            name="mobile"
+            placeholder="Your Mobile Number"
+            pattern="[0-9]{10}"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Tell About Yourself"
+            rows="5"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d10538.536962357985!2d76.56994428953087!3d28.885781593849835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssunaria%20chowk!5e0!3m2!1sen!2sin!4v1754830476518!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Floating Buttons -->
+    <div class="floating-btn">
+      <a
+        href="https://wa.me/917082754336"
+        target="_blank"
+        title="Chat on WhatsApp"
+        >💬</a
+      >
+      <a href="tel:+917082754336" class="call" title="Call Now">📞</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>© 2025 BrightMind Maths Coaching | All Rights Reserved</footer>
+
+    <script>
+      var currentIndex = 0;
+      const items = document.querySelectorAll(".carousel-item");
+      function showCarousel() {
+        items.forEach((item, index) => {
+          item.style.display = index === currentIndex ? "block" : "none";
+          if (index === currentIndex) {
+            item.classList.add("carousel-fade");
+          } else {
+            item.classList.remove("carousel-fade");
+          }
+        });
+        currentIndex = (currentIndex + 1) % items.length;
+        setTimeout(showCarousel, 3000);
+      }
+      showCarousel();
+    </script>
+
+    <script>
+      const track = document.querySelector(".carousel-track");
+      const slides = Array.from(track.children);
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
       });
-      currentIndex = (currentIndex + 1) % items.length;
-      setTimeout(showCarousel, 3000);
-    }
-    showCarousel();
-  </script>
-</body>
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+      });
+    </script>
+  </body>
 </html>

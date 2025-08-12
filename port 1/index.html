@@ -567,6 +567,23 @@
     navLinks.classList.toggle("active");
   });
 </script>
+    <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  const navItems = navLinks.querySelectorAll("a");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  navItems.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+</script>
+
+
 
 
   </body>
